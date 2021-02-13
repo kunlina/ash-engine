@@ -31,7 +31,7 @@ Line operator*(const QMatrix4x4 &m, const Line &l) {
 
 QVector3D getIntersectionOfLinePlane(Line l, Plane p) {
     float t = QVector3D::dotProduct(p.n, p.v - l.st) / QVector3D::dotProduct(p.n, l.dir);
-    if (isnan(t) && log_level >= LOG_LEVEL_WARNING)
+    if (std::isnan(t) && log_level >= LOG_LEVEL_WARNING)
         dout << "Warning: NaN detected";
     return l.st + l.dir * t;
 }
