@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Core\AbstractEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\AbstractGizmo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\AbstractLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\AmbientLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\AmbientLightProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AshEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\CameraProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\DirectionalLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\DirectionalLightProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpenGL\FPSCounter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\FloatEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\FloatSlider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Gridline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\GridlineProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\MainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\MaterialProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\MeshProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\ModelExporter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\ModelLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\ModelProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpenGL\OpenGLMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpenGL\OpenGLMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpenGL\OpenGLRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpenGL\OpenGLScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpenGL\OpenGLTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpenGL\OpenGLUniformBufferObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpenGL\OpenGLWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\PointLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\PointLightProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\RotateGizmo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\ScaleGizmo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\SceneLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\SceneSaver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\SceneTreeWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\SpotLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\SpotLightProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\TextureLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\TransformGizmo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\TranslateGizmo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\Vector3DEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI\Vector3DEditSlider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Vertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\extmath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="include\Core\AbstractEntity.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\AbstractGizmo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\AbstractLight.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\AmbientLight.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\AmbientLightProperty.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\Camera.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\CameraProperty.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="include\Core\Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="include\Core\DirectionalLight.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\DirectionalLightProperty.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\OpenGL\FPSCounter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\FloatEdit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\FloatSlider.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\Gridline.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\GridlineProperty.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\MainWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\Material.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\MaterialProperty.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\Mesh.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\MeshProperty.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\Model.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="include\Core\ModelExporter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\ModelLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="include\UI\ModelProperty.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\OpenGL\OpenGLMaterial.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\OpenGL\OpenGLMesh.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\OpenGL\OpenGLRenderer.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\OpenGL\OpenGLScene.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\OpenGL\OpenGLTexture.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="include\OpenGL\OpenGLUniformBufferObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="include\OpenGL\OpenGLWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\PointLight.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\PointLightProperty.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\RotateGizmo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\ScaleGizmo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\Scene.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="include\Core\SceneLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\SceneSaver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="include\UI\SceneTreeWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\SpotLight.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\SpotLightProperty.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\Texture.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="include\Core\TextureLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="include\Core\TransformGizmo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\Core\TranslateGizmo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\Vector3DEdit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\UI\Vector3DEditSlider.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="include\Core\Vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\extmath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="build\tmp\debug\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="build\tmp\release\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icons\AmbientLightIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\icons\CameraIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\icons\ColorWheel.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\Cone.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\Cube.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\Cylinder.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\icons\DirectionalLightIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\icons\GridlineIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\icons\MaterialIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\icons\MeshIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\icons\ModelIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\Plane.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\PointLight.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\icons\PointLightIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\RotX.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\RotY.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\RotZ.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\ScaleX.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\ScaleY.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\ScaleZ.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\Sphere.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\SpotLight.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\icons\SpotLightIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\icons\TextureIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\TransX.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\TransY.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shapes\TransZ.obj">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shaders\basic.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shaders\basic.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shaders\define.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shaders\phong.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shaders\phong.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shaders\picking.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\shaders\picking.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="resources.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="resources\shaders\ubo.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\AshEngine_resource.rc" />
+  </ItemGroup>
+</Project>
