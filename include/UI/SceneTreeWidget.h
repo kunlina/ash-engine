@@ -39,7 +39,6 @@ class BaseItem: public QObject, public QTreeWidgetItem {
 public:
     BaseItem(QObject* host, QTreeWidgetItem* parent): QObject(0), QTreeWidgetItem(parent) {
         m_priority = 0;
-        setData(0, Qt::UserRole, QVariant::fromValue(host));
         setText(0, host->objectName());
         connect(host, SIGNAL(destroyed(QObject*)), this, SLOT(hostDestroyed(QObject*)));
     }
@@ -79,6 +78,7 @@ class CameraItem: public BaseItem {
 public:
     CameraItem(Camera* host, QTreeWidgetItem* parent): BaseItem(host, parent) {
         m_host = host;
+        setData(0, Qt::UserRole, QVariant::fromValue(host));
         setPriority(CAMERA_PRIORITY);
         setIcon(0, QIcon(":/resources/icons/CameraIcon.png"));
     }
@@ -93,6 +93,7 @@ class GridlineItem: public BaseItem {
 public:
     GridlineItem(Gridline* host, QTreeWidgetItem* parent): BaseItem(host, parent) {
         m_host = host;
+        setData(0, Qt::UserRole, QVariant::fromValue(host));
         setPriority(GRIDLINE_PRIORITY);
         setIcon(0, QIcon(":/resources/icons/GridlineIcon.png"));
     }
@@ -107,6 +108,7 @@ class AmbientLightItem: public BaseItem {
 public:
     AmbientLightItem(AmbientLight* host, QTreeWidgetItem* parent): BaseItem(host, parent) {
         m_host = host;
+        setData(0, Qt::UserRole, QVariant::fromValue(host));
         setPriority(AMBIENTLIGHT_PRIORITY);
         setIcon(0, QIcon(":/resources/icons/AmbientLightIcon.png"));
     }
@@ -121,6 +123,7 @@ class DirectionalLightItem: public BaseItem {
 public:
     DirectionalLightItem(DirectionalLight* host, QTreeWidgetItem* parent): BaseItem(host, parent) {
         m_host = host;
+        setData(0, Qt::UserRole, QVariant::fromValue(host));
         setPriority(DIRECTIONALLIGHT_PRIORITY);
         setIcon(0, QIcon(":/resources/icons/DirectionalLightIcon.png"));
     }
@@ -135,6 +138,7 @@ class PointLightItem: public BaseItem {
 public:
     PointLightItem(PointLight* host, QTreeWidgetItem* parent): BaseItem(host, parent) {
         m_host = host;
+        setData(0, Qt::UserRole, QVariant::fromValue(host));
         setPriority(POINTLIGHT_PRIORITY);
         setIcon(0, QIcon(":/resources/icons/PointLightIcon.png"));
         connect(m_host->marker(), SIGNAL(selectedChanged(bool)), this, SLOT(selectedChanged(bool)));
@@ -160,6 +164,7 @@ class SpotLightItem: public BaseItem {
 public:
     SpotLightItem(SpotLight* host, QTreeWidgetItem* parent): BaseItem(host, parent) {
         m_host = host;
+        setData(0, Qt::UserRole, QVariant::fromValue(host));
         setPriority(SPOTLIGHT_PRIORITY);
         setIcon(0, QIcon(":/resources/icons/SpotLightIcon.png"));
         connect(m_host->marker(), SIGNAL(selectedChanged(bool)), this, SLOT(selectedChanged(bool)));
@@ -185,6 +190,7 @@ class MaterialItem: public BaseItem {
 public:
     MaterialItem(Material* host, QTreeWidgetItem* parent): BaseItem(host, parent) {
         m_host = host;
+        setData(0, Qt::UserRole, QVariant::fromValue(host));
         setIcon(0, QIcon(":/resources/icons/MaterialIcon.png"));
     }
 
@@ -198,6 +204,7 @@ class MeshItem: public BaseItem {
 public:
     MeshItem(Mesh* host, QTreeWidgetItem* parent): BaseItem(host, parent) {
         m_host = host;
+        setData(0, Qt::UserRole, QVariant::fromValue(host));
         setPriority(MESH_PRIORITY);
         setIcon(0, QIcon(":/resources/icons/MeshIcon.png"));
         if (m_host->material())
@@ -234,6 +241,7 @@ class ModelItem: public BaseItem {
 public:
     ModelItem(Model* host, QTreeWidgetItem* parent): BaseItem(host, parent) {
         m_host = host;
+        setData(0, Qt::UserRole, QVariant::fromValue(host));
         setPriority(MODEL_PRIORITY);
         setIcon(0, QIcon(":/resources/icons/ModelIcon.png"));
         for (int i = 0; i < m_host->childMeshes().size(); i++)

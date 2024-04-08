@@ -1,4 +1,5 @@
 #include <OpenGLUniformBufferObject.h>
+#include <QOpenGLVersionFunctionsFactory>
 
 QOpenGLFunctions_3_3_Core* OpenGLUniformBufferObject::glFuncs = 0;
 
@@ -18,7 +19,7 @@ GLuint OpenGLUniformBufferObject::bufferId() const {
 bool OpenGLUniformBufferObject::create() {
     if (m_id) destroy();
     if (!glFuncs)
-        glFuncs = QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_3_3_Core>();
+        glFuncs = QOpenGLVersionFunctionsFactory::get<QOpenGLFunctions_3_3_Core>(QOpenGLContext::currentContext());
     glFuncs->glGenBuffers(1, &m_id);
     return m_id > 0;
 }
@@ -54,7 +55,7 @@ void OpenGLUniformBufferObject::release() {
 
 void OpenGLUniformBufferObject::bindUniformBlock(QOpenGLShaderProgram* shader) {
 	if (!glFuncs)
-		glFuncs = QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_3_3_Core>();
+        glFuncs = QOpenGLVersionFunctionsFactory::get<QOpenGLFunctions_3_3_Core>(QOpenGLContext::currentContext());
     GLuint indx = glFuncs->glGetUniformBlockIndex(shader->programId(), "CameraInfo");
 	glFuncs->glUniformBlockBinding(shader->programId(), indx, CAMERA_INFO_BINDING_POINT);
     indx = glFuncs->glGetUniformBlockIndex(shader->programId(), "ModelInfo");

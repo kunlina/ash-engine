@@ -166,7 +166,7 @@ QOpenGLShaderProgram * OpenGLRenderer::loadShaderFromFile(
     QByteArray geometryShaderCode = "#version 330 core\n"
         + glslDefineCode + "\n"
         + glslUBOCode + "\n"
-        + (geometryShaderFilePath != "" ? geometryShaderFile.readAll() : "");
+        + (geometryShaderFilePath != "" ? geometryShaderFile.readAll() : QByteArray());
 
     QOpenGLShaderProgram* shader = new QOpenGLShaderProgram(this);
     if (!shader->addShaderFromSourceCode(QOpenGLShader::Vertex, vertexShaderCode)) {

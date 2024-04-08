@@ -119,7 +119,7 @@ void OpenGLScene::commitCameraInfo() {
     if (!m_host->camera()) return;
     memcpy(shaderCameraInfo.projMat, m_host->camera()->projectionMatrix().constData(), 64);
     memcpy(shaderCameraInfo.viewMat, m_host->camera()->viewMatrix().constData(), 64);
-    shaderCameraInfo.cameraPos = m_host->camera()->position();
+    shaderCameraInfo.cameraPos = { m_host->camera()->position(), 1.0 };
 
     if (m_cameraInfo == 0) {
         m_cameraInfo = new OpenGLUniformBufferObject;
@@ -138,19 +138,19 @@ void OpenGLScene::commitLightInfo() {
     int ambientLightNum = 0, directionalLightNum = 0, pointLightNum = 0, spotLightNum = 0;
     for (int i = 0; i < m_host->ambientLights().size(); i++)
         if (m_host->ambientLights()[i]->enabled()) {
-            shaderlightInfo.ambientLight[ambientLightNum].color = m_host->ambientLights()[i]->color() * m_host->ambientLights()[i]->intensity();
+            shaderlightInfo.ambientLight[ambientLightNum].color = { m_host->ambientLights()[i]->color() * m_host->ambientLights()[i]->intensity(), 1 };
             ambientLightNum++;
         }
     for (int i = 0; i < m_host->directionalLights().size(); i++)
         if (m_host->directionalLights()[i]->enabled()) {
-            shaderlightInfo.directionalLight[directionalLightNum].color = m_host->directionalLights()[i]->color() * m_host->directionalLights()[i]->intensity();
-            shaderlightInfo.directionalLight[directionalLightNum].direction = m_host->directionalLights()[i]->direction();
+            shaderlightInfo.directionalLight[directionalLightNum].color = { m_host->directionalLights()[i]->color() * m_host->directionalLights()[i]->intensity(), 1 };
+            shaderlightInfo.directionalLight[directionalLightNum].direction = { m_host->directionalLights()[i]->direction(), 0 };
             directionalLightNum++;
         }
     for (int i = 0; i < m_host->pointLights().size(); i++)
         if (m_host->pointLights()[i]->enabled()) {
-            shaderlightInfo.pointLight[pointLightNum].color = m_host->pointLights()[i]->color() * m_host->pointLights()[i]->intensity();
-            shaderlightInfo.pointLight[pointLightNum].pos = m_host->pointLights()[i]->position();
+            shaderlightInfo.pointLight[pointLightNum].color = { m_host->pointLights()[i]->color() * m_host->pointLights()[i]->intensity(), 1 };
+            shaderlightInfo.pointLight[pointLightNum].pos = { m_host->pointLights()[i]->position(), 1. };
             shaderlightInfo.pointLight[pointLightNum].attenuation[0] = m_host->pointLights()[i]->enableAttenuation();
             shaderlightInfo.pointLight[pointLightNum].attenuation[1] = m_host->pointLights()[i]->attenuationQuadratic();
             shaderlightInfo.pointLight[pointLightNum].attenuation[2] = m_host->pointLights()[i]->attenuationLinear();
@@ -159,9 +159,9 @@ void OpenGLScene::commitLightInfo() {
         }
     for (int i = 0; i < m_host->spotLights().size(); i++)
         if (m_host->spotLights()[i]->enabled()) {
-            shaderlightInfo.spotLight[spotLightNum].color = m_host->spotLights()[i]->color() * m_host->spotLights()[i]->intensity();
-            shaderlightInfo.spotLight[spotLightNum].pos = m_host->spotLights()[i]->position();
-            shaderlightInfo.spotLight[spotLightNum].direction = m_host->spotLights()[i]->direction();
+            shaderlightInfo.spotLight[spotLightNum].color = { m_host->spotLights()[i]->color() * m_host->spotLights()[i]->intensity(), 1. };
+            shaderlightInfo.spotLight[spotLightNum].pos = { m_host->spotLights()[i]->position(), 1. };
+            shaderlightInfo.spotLight[spotLightNum].direction = { m_host->spotLights()[i]->direction(), 0. };
             shaderlightInfo.spotLight[spotLightNum].attenuation[0] = m_host->spotLights()[i]->enableAttenuation();
             shaderlightInfo.spotLight[spotLightNum].attenuation[1] = m_host->spotLights()[i]->attenuationQuadratic();
             shaderlightInfo.spotLight[spotLightNum].attenuation[2] = m_host->spotLights()[i]->attenuationLinear();

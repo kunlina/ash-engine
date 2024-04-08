@@ -1,4 +1,5 @@
 #include <MainWindow.h>
+#include <QActionGroup>
 
 MainWindow::MainWindow(QWidget * parent): QMainWindow(parent), m_host(0) {
     m_copyedObject.clear();
@@ -136,7 +137,7 @@ void MainWindow::fpsChanged(int fps) {
 
 void MainWindow::itemSelected(QVariant item) {
     delete m_propertyWidget->takeWidget();
-
+    
     if (item.canConvert<Camera*>()) {
         m_propertyWidget->setWidget(new CameraProperty(item.value<Camera*>(), this));
     } else if (item.canConvert<Gridline*>()) {
@@ -184,7 +185,7 @@ void MainWindow::fileNewScene() {
 void MainWindow::fileOpenScene() {
     if (!askToSaveScene()) return;
     QString filePath = QFileDialog::getOpenFileName(this, "Open Project", "", "Ash Engine Project (*.aeproj)");
-    if (filePath == 0) return;
+    if (filePath.isEmpty()) return;
 
     SceneLoader loader;
     Scene* scene = loader.loadFromFile(filePath);
@@ -209,7 +210,7 @@ void MainWindow::fileOpenScene() {
 
 void MainWindow::fileImportModel() {
     QString filePath = QFileDialog::getOpenFileName(this, "Load Model", "", "All Files (*)");
-    if (filePath == 0) return;
+    if (filePath.isEmpty()) return;
 
     ModelLoader loader;
     Model* model = loader.loadModelFromFile(filePath);
@@ -240,7 +241,7 @@ void MainWindow::fileExportModel() {
     filter += "Extensible 3D (*.x3d);;";
     filter += "3MF File Format (*.3mf);;";
     QString filePath = QFileDialog::getSaveFileName(this, "Export Model", "", filter);
-    if (filePath == 0) return;
+    if (filePath.isEmpty()) return;
 
     ModelExporter exporter;
     if (Model* model = qobject_cast<Model*>(AbstractEntity::getSelected()))
@@ -268,7 +269,7 @@ void MainWindow::fileSaveScene() {
 void MainWindow::fileSaveAsScene() {
     if (!m_host) return;
     QString filePath = QFileDialog::getSaveFileName(this, "Save Project", "", "Ash Engine Project (*.aeproj)");
-    if (filePath == 0) return;
+    if (filePath.isEmpty()) return;
 
     SceneSaver saver(m_host);
     saver.saveToFile(filePath);

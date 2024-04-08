@@ -48,7 +48,7 @@ void OpenGLMaterial::bind() {
     if (m_openGLBumpTexture)
         shaderMaterialInfo.useBumpMap = m_openGLBumpTexture->bind();
 
-    shaderMaterialInfo.color = m_host->color();
+    shaderMaterialInfo.color = { m_host->color(), 1.0 };
     shaderMaterialInfo.ambient = m_host->ambient();
     shaderMaterialInfo.diffuse = m_host->diffuse();
     shaderMaterialInfo.specular = m_host->specular();
@@ -71,7 +71,7 @@ void OpenGLMaterial::release() {
     if (m_openGLSpecularTexture) m_openGLSpecularTexture->release();
     if (m_openGLBumpTexture) m_openGLBumpTexture->release();
 
-    shaderMaterialInfo.color = QVector3D(0, 0, 0);
+    shaderMaterialInfo.color = { 0, 0, 0, 1 };
     shaderMaterialInfo.useDiffuseMap = 0;
     shaderMaterialInfo.useSpecularMap = 0;
     shaderMaterialInfo.useBumpMap = 0;
