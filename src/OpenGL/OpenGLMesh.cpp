@@ -1,5 +1,6 @@
 #include <OpenGLMesh.h>
 #include <OpenGLMaterial.h>
+#include <QOpenGLVersionFunctionsFactory>
 
 struct ShaderModelInfo {
     float modelMat[16];   // 64          // 0
@@ -58,7 +59,7 @@ void OpenGLMesh::create() {
     if (m_host->indices().size())
         m_ebo->allocate(&m_host->indices()[0], int(sizeof(uint32_t) * m_host->indices().size()));
 
-    glFuncs = QOpenGLContext::currentContext()->versionFunctions<QOpenGLFunctions_3_3_Core>();
+    glFuncs = QOpenGLVersionFunctionsFactory::get<QOpenGLFunctions_3_3_Core>(QOpenGLContext::currentContext());
     glFuncs->glEnableVertexAttribArray(0);
     glFuncs->glEnableVertexAttribArray(1);
     glFuncs->glEnableVertexAttribArray(2);
