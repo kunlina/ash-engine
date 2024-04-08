@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0705AD38-351C-3E9E-B2EE-286A6BCE7749}</ProjectGuid>
+    <RootNamespace>AshEngine</RootNamespace>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.22000.0</WindowsTargetPlatformMinVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>build\bin\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>build\tmp\release\</IntermediateDirectory>
+    <IntDir>build\tmp\release\</IntDir>
+    <PrimaryOutput>AshEngine</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>build\bin\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>build\tmp\debug\</IntermediateDirectory>
+    <IntDir>build\tmp\debug\</IntDir>
+    <PrimaryOutput>AshEngine</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtInstall>6.2.4_msvc2019_64</QtInstall>
+    <QtModules>core;opengl;network;gui;widgets</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>6.2.4_msvc2019_64</QtInstall>
+    <QtModules>core;opengl;network;gui;widgets</QtModules>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">build\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">build\tmp\release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AshEngine</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">build\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">build\tmp\debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AshEngine</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;include\Core;include\OpenGL;include\UI;3rdparty;build\tmp\release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>build\tmp\release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ObjectFileName>build\tmp\release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;APP_VERSION="v1.0.0";DEBUG_OUTPUT;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;.\lib\win\assimp-vc140-mt.lib;$(QTDIR)\lib\Qt6EntryPoint.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)\AshEngine.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <Version>1.0</Version>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;APP_VERSION=\"v1.0.0\";DEBUG_OUTPUT;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./build/tmp/$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>build\tmp\$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <Compression>default</Compression>
+      <InitFuncName>resources</InitFuncName>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>build\tmp\$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;include\Core;include\OpenGL;include\UI;3rdparty;build\tmp\debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>build\tmp\debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ObjectFileName>build\tmp\debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;APP_VERSION="v1.0.0";DEBUG_OUTPUT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;.\lib\win\assimp-vc140-mt.lib;$(QTDIR)\lib\Qt6EntryPointd.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\AshEngine.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <Version>1.0</Version>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;APP_VERSION=\"v1.0.0\";DEBUG_OUTPUT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtRcc>
+      <InitFuncName>resources</InitFuncName>
+      <Compression>default</Compression>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>build\tmp\$(Configuration)</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./build/tmp/$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>build\tmp\$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <PostBuildEvent>
+      <Command>xcopy /Y "$(ProjectDir)lib\win\assimp-vc140-mt.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Core\AbstractEntity.cpp" />
+    <ClCompile Include="src\Core\AbstractGizmo.cpp" />
+    <ClCompile Include="src\Core\AbstractLight.cpp" />
+    <ClCompile Include="src\Core\AmbientLight.cpp" />
+    <ClCompile Include="src\UI\AmbientLightProperty.cpp" />
+    <ClCompile Include="src\AshEngine.cpp" />
+    <ClCompile Include="src\Core\Camera.cpp" />
+    <ClCompile Include="src\UI\CameraProperty.cpp" />
+    <ClCompile Include="src\Core\DirectionalLight.cpp" />
+    <ClCompile Include="src\UI\DirectionalLightProperty.cpp" />
+    <ClCompile Include="src\OpenGL\FPSCounter.cpp" />
+    <ClCompile Include="src\UI\FloatEdit.cpp" />
+    <ClCompile Include="src\UI\FloatSlider.cpp" />
+    <ClCompile Include="src\Core\Gridline.cpp" />
+    <ClCompile Include="src\UI\GridlineProperty.cpp" />
+    <ClCompile Include="src\UI\MainWindow.cpp" />
+    <ClCompile Include="src\Core\Material.cpp" />
+    <ClCompile Include="src\UI\MaterialProperty.cpp" />
+    <ClCompile Include="src\Core\Mesh.cpp" />
+    <ClCompile Include="src\UI\MeshProperty.cpp" />
+    <ClCompile Include="src\Core\Model.cpp" />
+    <ClCompile Include="src\Core\ModelExporter.cpp" />
+    <ClCompile Include="src\Core\ModelLoader.cpp" />
+    <ClCompile Include="src\UI\ModelProperty.cpp" />
+    <ClCompile Include="src\OpenGL\OpenGLMaterial.cpp" />
+    <ClCompile Include="src\OpenGL\OpenGLMesh.cpp" />
+    <ClCompile Include="src\OpenGL\OpenGLRenderer.cpp" />
+    <ClCompile Include="src\OpenGL\OpenGLScene.cpp" />
+    <ClCompile Include="src\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="src\OpenGL\OpenGLUniformBufferObject.cpp" />
+    <ClCompile Include="src\OpenGL\OpenGLWindow.cpp" />
+    <ClCompile Include="src\Core\PointLight.cpp" />
+    <ClCompile Include="src\UI\PointLightProperty.cpp" />
+    <ClCompile Include="src\Core\RotateGizmo.cpp" />
+    <ClCompile Include="src\Core\ScaleGizmo.cpp" />
+    <ClCompile Include="src\Core\Scene.cpp" />
+    <ClCompile Include="src\Core\SceneLoader.cpp" />
+    <ClCompile Include="src\Core\SceneSaver.cpp" />
+    <ClCompile Include="src\UI\SceneTreeWidget.cpp" />
+    <ClCompile Include="src\Core\SpotLight.cpp" />
+    <ClCompile Include="src\UI\SpotLightProperty.cpp" />
+    <ClCompile Include="src\Core\Texture.cpp" />
+    <ClCompile Include="src\Core\TextureLoader.cpp" />
+    <ClCompile Include="src\Core\TransformGizmo.cpp" />
+    <ClCompile Include="src\Core\TranslateGizmo.cpp" />
+    <ClCompile Include="src\UI\Vector3DEdit.cpp" />
+    <ClCompile Include="src\UI\Vector3DEditSlider.cpp" />
+    <ClCompile Include="src\Core\Vertex.cpp" />
+    <ClCompile Include="src\Core\extmath.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="include\Core\AbstractEntity.h" />
+    <QtMoc Include="include\Core\AbstractGizmo.h" />
+    <QtMoc Include="include\Core\AbstractLight.h" />
+    <QtMoc Include="include\Core\AmbientLight.h" />
+    <QtMoc Include="include\UI\AmbientLightProperty.h" />
+    <QtMoc Include="include\Core\Camera.h" />
+    <QtMoc Include="include\UI\CameraProperty.h" />
+    <ClInclude Include="include\Core\Common.h" />
+    <QtMoc Include="include\Core\DirectionalLight.h" />
+    <QtMoc Include="include\UI\DirectionalLightProperty.h" />
+    <QtMoc Include="include\OpenGL\FPSCounter.h" />
+    <QtMoc Include="include\UI\FloatEdit.h" />
+    <QtMoc Include="include\UI\FloatSlider.h" />
+    <QtMoc Include="include\Core\Gridline.h" />
+    <QtMoc Include="include\UI\GridlineProperty.h" />
+    <QtMoc Include="include\UI\MainWindow.h" />
+    <QtMoc Include="include\Core\Material.h" />
+    <QtMoc Include="include\UI\MaterialProperty.h" />
+    <QtMoc Include="include\Core\Mesh.h" />
+    <QtMoc Include="include\UI\MeshProperty.h" />
+    <QtMoc Include="include\Core\Model.h" />
+    <ClInclude Include="include\Core\ModelExporter.h" />
+    <ClInclude Include="include\Core\ModelLoader.h" />
+    <QtMoc Include="include\UI\ModelProperty.h" />
+    <QtMoc Include="include\OpenGL\OpenGLMaterial.h" />
+    <QtMoc Include="include\OpenGL\OpenGLMesh.h" />
+    <QtMoc Include="include\OpenGL\OpenGLRenderer.h" />
+    <QtMoc Include="include\OpenGL\OpenGLScene.h" />
+    <QtMoc Include="include\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="include\OpenGL\OpenGLUniformBufferObject.h" />
+    <QtMoc Include="include\OpenGL\OpenGLWindow.h" />
+    <QtMoc Include="include\Core\PointLight.h" />
+    <QtMoc Include="include\UI\PointLightProperty.h" />
+    <QtMoc Include="include\Core\RotateGizmo.h" />
+    <QtMoc Include="include\Core\ScaleGizmo.h" />
+    <QtMoc Include="include\Core\Scene.h" />
+    <ClInclude Include="include\Core\SceneLoader.h" />
+    <ClInclude Include="include\Core\SceneSaver.h" />
+    <QtMoc Include="include\UI\SceneTreeWidget.h" />
+    <QtMoc Include="include\Core\SpotLight.h" />
+    <QtMoc Include="include\UI\SpotLightProperty.h" />
+    <QtMoc Include="include\Core\Texture.h" />
+    <ClInclude Include="include\Core\TextureLoader.h" />
+    <QtMoc Include="include\Core\TransformGizmo.h" />
+    <QtMoc Include="include\Core\TranslateGizmo.h" />
+    <QtMoc Include="include\UI\Vector3DEdit.h" />
+    <QtMoc Include="include\UI\Vector3DEditSlider.h" />
+    <ClInclude Include="include\Core\Vertex.h" />
+    <ClInclude Include="include\Core\extmath.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="build\tmp\debug\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -Zi -MDd -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;build\tmp\debug\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">build\tmp\debug\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="build\tmp\release\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -O2 -MD -std:c++17 -utf-8 -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;build\tmp\release\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">build\tmp\release\moc_predefs.h;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="resources\icons\AmbientLightIcon.png" />
+    <None Include="resources\icons\CameraIcon.png" />
+    <None Include="resources\icons\ColorWheel.png" />
+    <None Include="resources\shapes\Cone.obj" />
+    <None Include="resources\shapes\Cube.obj" />
+    <None Include="resources\shapes\Cylinder.obj" />
+    <None Include="resources\icons\DirectionalLightIcon.png" />
+    <None Include="resources\icons\GridlineIcon.png" />
+    <None Include="resources\icons\MaterialIcon.png" />
+    <None Include="resources\icons\MeshIcon.png" />
+    <None Include="resources\icons\ModelIcon.png" />
+    <None Include="resources\shapes\Plane.obj" />
+    <None Include="resources\shapes\PointLight.obj" />
+    <None Include="resources\icons\PointLightIcon.png" />
+    <None Include="resources\shapes\RotX.obj" />
+    <None Include="resources\shapes\RotY.obj" />
+    <None Include="resources\shapes\RotZ.obj" />
+    <None Include="resources\shapes\ScaleX.obj" />
+    <None Include="resources\shapes\ScaleY.obj" />
+    <None Include="resources\shapes\ScaleZ.obj" />
+    <None Include="resources\shapes\Sphere.obj" />
+    <None Include="resources\shapes\SpotLight.obj" />
+    <None Include="resources\icons\SpotLightIcon.png" />
+    <None Include="resources\icons\TextureIcon.png" />
+    <None Include="resources\shapes\TransX.obj" />
+    <None Include="resources\shapes\TransY.obj" />
+    <None Include="resources\shapes\TransZ.obj" />
+    <None Include="resources\shaders\basic.frag" />
+    <None Include="resources\shaders\basic.vert" />
+    <None Include="resources\shaders\define.glsl" />
+    <None Include="resources\shaders\phong.frag" />
+    <None Include="resources\shaders\phong.vert" />
+    <None Include="resources\shaders\picking.frag" />
+    <None Include="resources\shaders\picking.vert" />
+    <QtRcc Include="resources.qrc" />
+    <None Include="resources\shaders\ubo.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\AshEngine_resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
